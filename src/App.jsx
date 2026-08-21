@@ -1,9 +1,32 @@
 import DriftWall from './DriftWall';
 
+const makeCard = (name, amount) => ({
+  image: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+    <svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+      <rect width="600" height="400" rx="28" fill="#111118"/>
+      <text x="300" y="174" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" text-anchor="middle">${name}</text>
+      <text x="300" y="238" fill="#b7b7c7" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="500" text-anchor="middle">Received $${amount}</text>
+    </svg>
+  `)}`,
+  title: `${name} — Received $${amount}`
+});
+
 const items = [
-  { image: 'https://picsum.photos/id/1015/600/400', title: 'Peaks', href: 'https://example.com/one' },
-  { image: 'https://picsum.photos/id/1025/600/400', title: 'Pup', href: 'https://example.com/two' },
-  { image: 'https://picsum.photos/id/1039/600/400', title: 'Falls', href: 'https://example.com/three' }
+  makeCard('Maya', 42),
+  makeCard('Noah', 118),
+  makeCard('Ava', 7),
+  makeCard('Leo', 250),
+  makeCard('Sofia', 63),
+  makeCard('Ethan', 19),
+  makeCard('Isla', 500),
+  makeCard('Jack', 84),
+  makeCard('Mia', 31),
+  makeCard('Theo', 145),
+  makeCard('Lily', 12),
+  makeCard('Oscar', 320),
+  makeCard('Ruby', 76),
+  makeCard('Finn', 205),
+  makeCard('Ella', 99)
 ];
 
 export default function App() {
