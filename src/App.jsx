@@ -48,7 +48,7 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', position: 'relative' }}>
       <DriftWall
         items={items}
         columns={columns}
@@ -68,6 +68,47 @@ export default function App() {
         dim={0.55}
         overlayColor="#060010"
       />
+
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          pointerEvents: 'none'
+        }}
+      >
+        <div style={{ textAlign: 'center', color: '#fff', pointerEvents: 'auto' }}>
+          <div
+            style={{
+              fontFamily: 'Arial, Helvetica, sans-serif',
+              fontSize: 'clamp(56px, 10vw, 150px)',
+              fontWeight: 900,
+              letterSpacing: '-0.06em',
+              lineHeight: 0.9
+            }}
+          >
+            SELLOUT.
+          </div>
+          <a
+            href={`${import.meta.env.BASE_URL}site.html`}
+            style={{
+              display: 'inline-block',
+              marginTop: 28,
+              color: '#fff',
+              fontFamily: 'Arial, Helvetica, sans-serif',
+              fontSize: 15,
+              fontWeight: 700,
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase',
+              textDecoration: 'none'
+            }}
+          >
+            Enter site →
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
