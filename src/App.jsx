@@ -1,9 +1,21 @@
 import DriftWall from './DriftWall';
 
 const items = [
-  { image: 'https://picsum.photos/id/1015/600/400', title: 'Peaks', href: 'https://example.com/one' },
-  { image: 'https://picsum.photos/id/1025/600/400', title: 'Pup', href: 'https://example.com/two' },
-  { image: 'https://picsum.photos/id/1039/600/400', title: 'Falls', href: 'https://example.com/three' }
+  { name: 'Maya', amount: 42 },
+  { name: 'Noah', amount: 118 },
+  { name: 'Ava', amount: 7 },
+  { name: 'Leo', amount: 250 },
+  { name: 'Sofia', amount: 63 },
+  { name: 'Ethan', amount: 19 },
+  { name: 'Isla', amount: 500 },
+  { name: 'Jack', amount: 84 },
+  { name: 'Mia', amount: 31 },
+  { name: 'Theo', amount: 145 },
+  { name: 'Lily', amount: 12 },
+  { name: 'Oscar', amount: 320 },
+  { name: 'Ruby', amount: 76 },
+  { name: 'Finn', amount: 205 },
+  { name: 'Ella', amount: 99 }
 ];
 
 export default function App() {
