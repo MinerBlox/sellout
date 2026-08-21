@@ -1,4 +1,8 @@
+import { useEffect, useState } from 'react';
 import DriftWall from './DriftWall';
+
+const TILE_WIDTH = 200;
+const GAP = 18;
 
 const makeCard = (name, amount) => ({
   image: `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
@@ -29,15 +33,28 @@ const items = [
   makeCard('Ella', 99)
 ];
 
+const getColumnCount = () => {
+  if (typeof window === 'undefined') return 7;
+  return Math.max(7, Math.ceil(window.innerWidth / ((TILE_WIDTH + GAP) * 1.05)) + 3);
+};
+
 export default function App() {
+  const [columns, setColumns] = useState(getColumnCount);
+
+  useEffect(() => {
+    const updateColumns = () => setColumns(getColumnCount());
+    window.addEventListener('resize', updateColumns);
+    return () => window.removeEventListener('resize', updateColumns);
+  }, []);
+
   return (
     <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
       <DriftWall
         items={items}
-        columns={5}
-        tileWidth={200}
+        columns={columns}
+        tileWidth={TILE_WIDTH}
         tileHeight={132}
-        gap={18}
+        gap={GAP}
         tilt={16}
         turn={-14}
         perspective={1200}
