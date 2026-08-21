@@ -8,7 +8,7 @@ const items = [
 
 export default function App() {
   return (
-    <div style={{ height: 600 }}>
+    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden' }}>
       <DriftWall
         items={items}
         columns={5}
@@ -23,7 +23,7 @@ export default function App() {
         direction="up"
         variance={0.45}
         parallax={0.6}
-        lift={64}
+        lift={0}
         fade={0.6}
         dim={0.55}
         overlayColor="#060010"
